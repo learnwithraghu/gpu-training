@@ -6,4 +6,4 @@ Static site files are generated into `site/dist` by:
 python3 scripts/build_site.py
 ```
 
-`site/dist` is deployed to GitHub Pages by `.github/workflows/pages.yml`.
+`site/dist` is generated locally for preview/testing.

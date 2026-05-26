@@ -6,7 +6,7 @@
 
 - Complete `00-colab-and-gpu-setup`.
 - Complete `01-gpu-fundamentals`.
-- Launch public GitHub Pages site with copy-enabled code blocks.
+- Maintain local static site build with copy-enabled code blocks.
 
 ### Wave 2 (Acceleration Core)
 
@@ -36,4 +36,4 @@
 
 - Learners can run all MVP labs in Colab without local setup.
 - Lesson pages provide copy buttons for every code block.
-- GitHub Pages deployment is automated and stable.
+- Static site generation is automated and stable.

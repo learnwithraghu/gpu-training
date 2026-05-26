@@ -1,0 +1,22 @@
+# Section 00 - Colab and GPU Setup
+
+## Teaching Outcome
+
+Learners can reliably start a Colab GPU runtime, verify hardware, and avoid invalid benchmark runs.
+
+## Session Plan (45 minutes)
+
+1. Context: why runtime verification matters
+2. Live setup: GPU runtime check in Colab
+3. Guided practice: collect a baseline timing
+4. Debrief: common pitfalls and preflight checklist
+
+## Teaching Notes
+
+- Emphasize that Colab sessions are ephemeral.
+- Require learners to run `nvidia-smi` before every lab.
+- Show one failed run scenario (CPU runtime) and compare.
+
+## Notebook
+
+- `notebooks/01-runtime-verification-and-baseline.ipynb`
