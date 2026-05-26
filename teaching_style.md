@@ -25,6 +25,7 @@
 
 ## Image instructions 
 - SVG images generates should not have overlapping text or lines etc. It should be neat and use [paperpenince](https://github.com/dwzhu-pku/PaperBanana) style 
+- Don't limit to 1 image per notebook , Go upt 5 if required and required only.
 
 ## Don't do
 - Don't use jargon or complex words. 
