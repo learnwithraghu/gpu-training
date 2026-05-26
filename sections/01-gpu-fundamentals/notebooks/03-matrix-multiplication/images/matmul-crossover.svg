@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .axis-line { stroke: #4a5568; stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    .cpu-curve { stroke: #3182ce; stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .gpu-curve { stroke: #38a169; stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .crossover-highlight { stroke: #e53e3e; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">The Matrix Multiplication Crossover Point</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">At what matrix size does the GPU actually become faster than the CPU?</text>
+
+  <!-- Chart Area -->
+  <g transform="translate(100, 80)">
+    <!-- Axes -->
+    <line x1="0" y1="280" x2="620" y2="280" class="axis-line" /> <!-- X Axis -->
+    <line x1="0" y1="0" x2="0" y2="280" class="axis-line" /> <!-- Y Axis -->
+
+    <!-- Axis Labels -->
+    <text x="310" y="315" class="sketch-text" style="font-weight: bold; text-anchor: middle; font-size: 14px;">Matrix Size (N &times; N)</text>
+    <text x="-140" y="-45" class="sketch-text" style="font-weight: bold; text-anchor: middle; font-size: 14px; transform: rotate(-90deg);">Execution Time (ms)</text>
+
+    <!-- X Axis Ticks & Labels -->
+    <text x="50" y="298" class="sketch-text" style="text-anchor: middle; font-size: 11px;">32</text>
+    <text x="150" y="298" class="sketch-text" style="text-anchor: middle; font-size: 11px;">128</text>
+    <text x="300" y="298" class="sketch-text" style="text-anchor: middle; font-size: 11px;">512</text>
+    <text x="450" y="298" class="sketch-text" style="text-anchor: middle; font-size: 11px;">1024</text>
+    <text x="580" y="298" class="sketch-text" style="text-anchor: middle; font-size: 11px;">2048+</text>
+
+    <!-- Curves -->
+    <!-- CPU: Begins very fast (low y) and curves upward steeply (cubic growth) -->
+    <path d="M 0 260 Q 150 240 300 180 T 450 70 T 580 10" class="cpu-curve" />
+    <text x="480" y="110" class="sketch-text" style="fill: #2b6cb0; font-weight: bold;">CPU Time</text>
+
+    <!-- GPU: Begins with flat overhead (high y) and curves up very slowly -->
+    <path d="M 0 200 Q 150 200 300 190 T 450 170 T 580 140" class="gpu-curve" />
+    <text x="480" y="195" class="sketch-text" style="fill: #276749; font-weight: bold;">GPU Time (with Sync)</text>
+
+    <!-- Crossover Point Highlight -->
+    <!-- Crossover occurs around X=240, Y=205 -->
+    <circle cx="240" cy="205" r="8" style="fill: none; stroke: #e53e3e; stroke-width: 2.5;" />
+    
+    <!-- Dotted lines to axes -->
+    <line x1="240" y1="205" x2="240" y2="280" class="crossover-highlight" />
+    <line x1="240" y1="205" x2="0" y2="205" class="crossover-highlight" />
+
+    <!-- Explanatory Annotations -->
+    <!-- Point label -->
+    <path d="M 248 197 Q 290 140 330 110" stroke="#e53e3e" stroke-width="1.5" fill="none" marker-end="url(#arrow-red)" />
+    <text x="340" y="105" class="sketch-text" style="fill: #c53030; font-weight: bold; font-size: 12.5px;">Crossover Point (N &asymp; 128 - 256)</text>
+
+    <!-- Left Zone: CPU Wins -->
+    <rect x="20" y="15" width="160" height="60" rx="6" style="fill: #ebf8ff; stroke: #3182ce; stroke-width: 1.2; opacity: 0.9;" />
+    <text x="100" y="35" class="sketch-text" style="fill: #2c5282; font-weight: bold; text-anchor: middle; font-size: 11px;">CPU Wins here</text>
+    <text x="100" y="50" class="sketch-text" style="fill: #2c5282; text-anchor: middle; font-size: 10px;">GPU Kernel Overhead > Math</text>
+
+    <!-- Right Zone: GPU Wins -->
+    <rect x="360" y="210" width="220" height="60" rx="6" style="fill: #e6fffa; stroke: #38a169; stroke-width: 1.2; opacity: 0.9;" />
+    <text x="470" y="230" class="sketch-text" style="fill: #234e52; font-weight: bold; text-anchor: middle; font-size: 11px;">GPU Wins here (10x - 100x)</text>
+    <text x="470" y="245" class="sketch-text" style="fill: #234e52; text-anchor: middle; font-size: 10px;">Massive parallel cores mask latency</text>
+  </g>
+
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#e53e3e" />
+    </marker>
+  </defs>
+</svg>

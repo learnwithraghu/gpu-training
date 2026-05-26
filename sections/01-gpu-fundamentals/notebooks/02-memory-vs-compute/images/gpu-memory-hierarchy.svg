@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .box-stroke { stroke: #4a5568; stroke-width: 2; fill: none; }
+    .bandwidth-text { font-size: 12px; font-weight: bold; fill: #e53e3e; }
+    .cpu-color { fill: #ebf8ff; stroke: #3182ce; stroke-width: 2.5; }
+    .gpu-color { fill: #e6fffa; stroke: #38a169; stroke-width: 2.5; }
+    .pcie-color { fill: #fff5f5; stroke: #e53e3e; stroke-width: 2; stroke-dasharray: 4 4; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">The GPU Memory Wall: PCIe Bottleneck</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Why transferring tensors to GPU is extremely expensive compared to computing on them.</text>
+
+  <!-- CPU Host Side -->
+  <g transform="translate(60, 120)">
+    <rect x="0" y="0" width="160" height="240" rx="8" class="cpu-color" />
+    <text x="80" y="30" class="sketch-text" style="font-weight: bold; fill: #2b6cb0; text-anchor: middle; font-size: 15px;">Host CPU</text>
+    
+    <!-- System RAM -->
+    <rect x="20" y="70" width="120" height="60" rx="4" style="fill: #bee3f8; stroke: #3182ce; stroke-width: 1.5;" />
+    <text x="80" y="95" class="sketch-text" style="font-weight: bold; text-anchor: middle; fill: #2b6cb0;">System RAM</text>
+    <text x="80" y="115" class="sketch-text" style="text-anchor: middle; font-size: 10px; fill: #2c5282;">(DDR4 / DDR5)</text>
+    <text x="80" y="200" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">CPU Access Speed:<br/><tspan font-weight="bold" fill="#2d3748">~50 - 100 GB/s</tspan></text>
+  </g>
+
+  <!-- PCIe Bottleneck (Bridge) -->
+  <g transform="translate(260, 190)">
+    <rect x="0" y="0" width="160" height="80" rx="6" class="pcie-color" />
+    <text x="80" y="25" class="sketch-text" style="font-weight: bold; fill: #c53030; text-anchor: middle; font-size: 13px;">PCIe Bus</text>
+    <text x="80" y="45" class="sketch-text" style="text-anchor: middle; font-size: 10px; fill: #9b2c2c;">(e.g., Gen 4 x16)</text>
+    <text x="80" y="65" class="sketch-text bandwidth-text" style="text-anchor: middle;">~32 GB/s (SLOOOW!)</text>
+
+    <!-- Arrow Left-to-Right -->
+    <path d="M -25 40 L 185 40" stroke="#e53e3e" stroke-width="2.5" fill="none" marker-end="url(#arrow-red)" />
+  </g>
+  
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#e53e3e" />
+    </marker>
+  </defs>
+
+  <!-- GPU Device Side -->
+  <g transform="translate(460, 120)">
+    <rect x="0" y="0" width="280" height="240" rx="8" class="gpu-color" />
+    <text x="140" y="30" class="sketch-text" style="font-weight: bold; fill: #22543d; text-anchor: middle; font-size: 15px;">Device GPU</text>
+
+    <!-- GPU HBM (VRAM) -->
+    <rect x="20" y="60" width="100" height="150" rx="4" style="fill: #b2f5ea; stroke: #38a169; stroke-width: 1.5;" />
+    <text x="70" y="90" class="sketch-text" style="font-weight: bold; text-anchor: middle; fill: #234e52;">GPU HBM</text>
+    <text x="70" y="110" class="sketch-text" style="text-anchor: middle; font-size: 10px; fill: #234e52;">(VRAM)</text>
+    <text x="70" y="150" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #234e52;">Access Speed:<br/><tspan font-weight="bold" fill="#22543d">~1.5 - 3 TB/s</tspan></text>
+
+    <!-- Arrow HBM to SRAM -->
+    <path d="M 125 130 L 155 130" stroke="#38a169" stroke-width="2.5" fill="none" marker-end="url(#arrow-green)" />
+    <defs>
+      <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#38a169" />
+      </marker>
+    </defs>
+
+    <!-- GPU Core SRAM Cache -->
+    <rect x="160" y="60" width="100" height="150" rx="4" style="fill: #c6f6d5; stroke: #38a169; stroke-width: 1.5;" />
+    <text x="210" y="90" class="sketch-text" style="font-weight: bold; text-anchor: middle; fill: #22543d;">GPU Cores</text>
+    <text x="210" y="110" class="sketch-text" style="text-anchor: middle; font-size: 10px; fill: #22543d;">&amp; SRAM Cache</text>
+    <text x="210" y="150" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #22543d;">Access Speed:<br/><tspan font-weight="bold" fill="#276749">>10 TB/s</tspan></text>
+  </g>
+</svg>

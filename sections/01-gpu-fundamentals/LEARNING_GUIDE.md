@@ -26,9 +26,11 @@ Learners can explain CPU vs GPU architecture tradeoffs and choose GPU accelerati
 
 Use a coaching tone: "pause and ask", "common mistake", and "debug hint" cues should appear throughout.
 
-## Notebook
+## Notebooks
 
-- `notebooks/01-cpu-vs-gpu-intuition-lab.ipynb`
+- `notebooks/01-throughput-vs-latency/01-throughput-vs-latency.ipynb`
+- `notebooks/02-memory-vs-compute/02-memory-vs-compute.ipynb`
+- `notebooks/03-matrix-multiplication/03-matrix-multiplication.ipynb`
 
 ## Solo Learner Experience (new)
 

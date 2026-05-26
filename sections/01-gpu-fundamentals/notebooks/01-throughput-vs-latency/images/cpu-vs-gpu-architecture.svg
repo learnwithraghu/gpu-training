@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .header-text { font-size: 16px; font-weight: bold; }
+    .cpu-stroke { stroke: #3182ce; stroke-width: 2.5; fill: none; }
+    .gpu-stroke { stroke: #38a169; stroke-width: 2.5; fill: none; }
+    .alu-fill { fill: #c6f6d5; stroke: #38a169; stroke-width: 1; }
+    .cache-fill { fill: #bee3f8; stroke: #3182ce; stroke-width: 1.5; }
+    .control-fill { fill: #feebc8; stroke: #dd6b20; stroke-width: 1.5; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">CPU vs. GPU Architecture: The Core Tradeoff</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Latent Speed (CPU) vs. Massive Parallel Throughput (GPU)</text>
+
+  <!-- CPU Panel -->
+  <g transform="translate(60, 100)">
+    <!-- Boundary Box -->
+    <rect x="0" y="0" width="310" height="280" rx="8" class="cpu-stroke" />
+    <text x="155" y="30" class="sketch-text header-text" style="fill: #2b6cb0; text-anchor: middle;">CPU (Latency Optimized)</text>
+    
+    <!-- Control Unit -->
+    <rect x="20" y="55" width="110" height="70" rx="4" class="control-fill" />
+    <text x="75" y="95" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #c05621;">Control Unit</text>
+    <text x="75" y="110" class="sketch-text" style="text-anchor: middle; font-size: 10px; fill: #7b341e;">(Branch Prediction, Out-of-Order)</text>
+
+    <!-- Cache (L1/L2/L3) -->
+    <rect x="140" y="55" width="150" height="70" rx="4" class="cache-fill" />
+    <text x="215" y="95" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #2b6cb0;">Large Cache</text>
+    <text x="215" y="110" class="sketch-text" style="text-anchor: middle; font-size: 10px; fill: #2c5282;">(Minimizes memory latency)</text>
+
+    <!-- Core 1 -->
+    <rect x="20" y="145" width="125" height="100" rx="4" style="fill: #fed7d7; stroke: #e53e3e; stroke-width: 1.5;" />
+    <text x="82" y="180" class="sketch-text" style="font-weight: bold; fill: #9b2c2c; text-anchor: middle;">Core 1</text>
+    <text x="82" y="200" class="sketch-text" style="fill: #9b2c2c; text-anchor: middle; font-size: 11px;">ALU (Heavyweight)</text>
+    <text x="82" y="215" class="sketch-text" style="fill: #7f1d1d; text-anchor: middle; font-size: 9px; font-style: italic;">Fast Clock (3-5 GHz)</text>
+
+    <!-- Core 2 -->
+    <rect x="165" y="145" width="125" height="100" rx="4" style="fill: #fed7d7; stroke: #e53e3e; stroke-width: 1.5;" />
+    <text x="227" y="180" class="sketch-text" style="font-weight: bold; fill: #9b2c2c; text-anchor: middle;">Core 2</text>
+    <text x="227" y="200" class="sketch-text" style="fill: #9b2c2c; text-anchor: middle; font-size: 11px;">ALU (Heavyweight)</text>
+    <text x="227" y="215" class="sketch-text" style="fill: #7f1d1d; text-anchor: middle; font-size: 9px; font-style: italic;">Fast Clock (3-5 GHz)</text>
+  </g>
+
+  <!-- GPU Panel -->
+  <g transform="translate(430, 100)">
+    <!-- Boundary Box -->
+    <rect x="0" y="0" width="310" height="280" rx="8" class="gpu-stroke" />
+    <text x="155" y="30" class="sketch-text header-text" style="fill: #22543d; text-anchor: middle;">GPU (Throughput Optimized)</text>
+
+    <!-- Simple Control & Cache strip -->
+    <rect x="20" y="50" width="130" height="30" rx="4" class="control-fill" style="stroke-width: 1;" />
+    <text x="85" y="70" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #c05621; font-weight: bold;">Simple Control</text>
+
+    <rect x="160" y="50" width="130" height="30" rx="4" class="cache-fill" style="stroke-width: 1;" />
+    <text x="225" y="70" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #2b6cb0; font-weight: bold;">Small Cache</text>
+
+    <!-- Grid of tiny ALUs -->
+    <g transform="translate(20, 95)">
+      <!-- We will draw a 8x5 grid of tiny green boxes to represent cores -->
+      <!-- Row 0 -->
+      <rect x="0" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="34" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="68" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="102" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="136" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="170" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="204" y="0" width="28" height="24" rx="2" class="alu-fill" /><rect x="238" y="0" width="28" height="24" rx="2" class="alu-fill" />
+      <!-- Row 1 -->
+      <rect x="0" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="34" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="68" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="102" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="136" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="170" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="204" y="30" width="28" height="24" rx="2" class="alu-fill" /><rect x="238" y="30" width="28" height="24" rx="2" class="alu-fill" />
+      <!-- Row 2 -->
+      <rect x="0" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="34" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="68" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="102" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="136" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="170" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="204" y="60" width="28" height="24" rx="2" class="alu-fill" /><rect x="238" y="60" width="28" height="24" rx="2" class="alu-fill" />
+      <!-- Row 3 -->
+      <rect x="0" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="34" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="68" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="102" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="136" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="170" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="204" y="90" width="28" height="24" rx="2" class="alu-fill" /><rect x="238" y="90" width="28" height="24" rx="2" class="alu-fill" />
+      <!-- Row 4 -->
+      <rect x="0" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="34" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="68" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="102" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="136" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="170" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="204" y="120" width="28" height="24" rx="2" class="alu-fill" /><rect x="238" y="120" width="28" height="24" rx="2" class="alu-fill" />
+    </g>
+    <text x="155" y="260" class="sketch-text" style="font-weight: bold; fill: #276749; text-anchor: middle; font-size: 11px;">Thousands of Tiny ALUs (Cores)</text>
+    <text x="155" y="272" class="sketch-text" style="fill: #718096; text-anchor: middle; font-size: 9px; font-style: italic;">Slower Clock (1-1.8 GHz)</text>
+  </g>
+</svg>
