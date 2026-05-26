@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .box-border { fill: none; stroke: #4a5568; stroke-width: 2.5; rx: 8; stroke-linejoin: round; }
+    .aws-color { fill: #fffaf0; stroke: #dd6b20; }
+    .gcp-color { fill: #ebf8ff; stroke: #3182ce; }
+    .vm-color { fill: #f7fafc; stroke: #718096; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">GPU Cloud Deployments</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Choosing the right abstraction level: Fully managed platforms vs. Bare metal VMs.</text>
+
+  <!-- AWS SageMaker Panel (Left) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="210" height="260" class="box-border aws-color" />
+    <text x="105" y="35" class="sketch-text" style="font-weight: bold; fill: #dd6b20; text-anchor: middle; font-size: 15px;">AWS SageMaker</text>
+
+    <!-- Cloud sketch -->
+    <path d="M 80 80 C 70 80, 60 90, 60 100 C 60 110, 70 120, 85 120 C 95 120, 105 115, 110 105 C 115 115, 130 115, 135 105 C 145 105, 150 95, 145 85 C 140 75, 125 75, 120 80 C 115 70, 95 70, 80 80 Z" fill="#fff" stroke="#dd6b20" stroke-width="1.5" />
+    <text x="105" y="102" class="sketch-text" style="font-size: 8px; text-anchor: middle; fill: #dd6b20; font-weight: bold;">AWS</text>
+
+    <text x="105" y="170" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #dd6b20;">Managed MLOps</text>
+    <text x="105" y="195" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">Automatic endpoints.</text>
+    <text x="105" y="212" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">Heavy setup curves,</text>
+    <text x="105" y="229" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">but very secure.</text>
+  </g>
+
+  <!-- GCP Vertex AI Panel (Middle) -->
+  <g transform="translate(295, 110)">
+    <rect x="0" y="0" width="210" height="260" class="box-border gcp-color" />
+    <text x="105" y="35" class="sketch-text" style="font-weight: bold; fill: #3182ce; text-anchor: middle; font-size: 15px;">GCP Vertex AI</text>
+
+    <!-- Vertex hexagon -->
+    <polygon points="105,65 140,85 140,115 105,135 70,115 70,85" fill="#fff" stroke="#3182ce" stroke-width="1.8" />
+    <text x="105" y="105" class="sketch-text" style="font-size: 9px; text-anchor: middle; fill: #3182ce; font-weight: bold;">Vertex</text>
+
+    <text x="105" y="170" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #2b6cb0;">Data Integrations</text>
+    <text x="105" y="195" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">Direct access to GCP</text>
+    <text x="105" y="212" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">storage buckets and</text>
+    <text x="105" y="229" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">pre-built containers.</text>
+  </g>
+
+  <!-- Raw VMs Panel (Right) -->
+  <g transform="translate(530, 110)">
+    <rect x="0" y="0" width="210" height="260" class="box-border vm-color" />
+    <text x="105" y="35" class="sketch-text" style="font-weight: bold; fill: #4a5568; text-anchor: middle; font-size: 15px;">Raw GPU VMs</text>
+
+    <!-- Server rack -->
+    <rect x="65" y="70" width="80" height="60" rx="4" fill="#fff" stroke="#4a5568" stroke-width="2" />
+    <line x1="65" y1="90" x2="145" y2="90" stroke="#4a5568" />
+    <line x1="65" y1="110" x2="145" y2="110" stroke="#4a5568" />
+    <circle cx="75" cy="80" r="2.5" fill="#4a5568" />
+    <circle cx="75" cy="100" r="2.5" fill="#4a5568" />
+    <circle cx="75" cy="120" r="2.5" fill="#4a5568" />
+
+    <text x="105" y="170" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #2d3748;">Total Control</text>
+    <text x="105" y="195" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">No platform locking.</text>
+    <text x="105" y="212" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">Requires manual Docker</text>
+    <text x="105" y="229" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #4a5568;">and NVIDIA driver setup.</text>
+  </g>
+</svg>

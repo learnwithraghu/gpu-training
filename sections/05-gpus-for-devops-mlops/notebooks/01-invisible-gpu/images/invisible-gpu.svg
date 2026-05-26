@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .box-border { fill: none; stroke: #4a5568; stroke-width: 2.5; rx: 8; stroke-linejoin: round; }
+    .hot-color { fill: #fff5f5; stroke: #e53e3e; }
+    .idle-color { fill: #ebf8ff; stroke: #3182ce; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">The "Invisible GPU" Trap</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Why ML jobs run slowly despite having active GPU hardware allocated.</text>
+
+  <!-- CPU Panel (Left) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="310" height="260" class="box-border hot-color" />
+    <text x="155" y="35" class="sketch-text" style="font-weight: bold; fill: #c53030; text-anchor: middle; font-size: 16px;">CPU (System Host)</text>
+
+    <!-- Hot CPU meters -->
+    <rect x="40" y="70" width="230" height="50" rx="4" fill="#fff" stroke="#e53e3e" stroke-width="2" />
+    <text x="155" y="100" class="sketch-text" style="font-weight: bold; fill: #b7791f; text-anchor: middle; font-size: 18px;">🔥 100% UTIL</text>
+    
+    <!-- Smoke details -->
+    <path d="M 120 60 Q 110 40 115 30 M 160 60 Q 150 40 155 30 M 200 60 Q 190 40 195 30" stroke="#a0aec0" stroke-width="2" fill="none" stroke-linecap="round" />
+
+    <text x="155" y="180" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #9b2c2c;">Overloaded &amp; Throttling</text>
+    <text x="155" y="205" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">Executing training loops sequentially.</text>
+    <text x="155" y="222" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">Model left on device="cpu" by mistake.</text>
+  </g>
+
+  <!-- GPU Panel (Right) -->
+  <g transform="translate(430, 110)">
+    <rect x="0" y="0" width="310" height="260" class="box-border idle-color" />
+    <text x="155" y="35" class="sketch-text" style="font-weight: bold; fill: #2b6cb0; text-anchor: middle; font-size: 16px;">GPU (Tesla T4 Device)</text>
+
+    <!-- Idle GPU meters -->
+    <rect x="40" y="70" width="230" height="50" rx="4" fill="#fff" stroke="#3182ce" stroke-width="2" />
+    <text x="155" y="100" class="sketch-text" style="font-weight: bold; fill: #4a5568; text-anchor: middle; font-size: 18px;">❄️ 0% UTIL</text>
+
+    <!-- Sleeping details -->
+    <text x="130" y="55" class="sketch-text" style="font-size: 16px; fill: #a0aec0; font-weight: bold;">Z</text>
+    <text x="145" y="45" class="sketch-text" style="font-size: 20px; fill: #a0aec0; font-weight: bold;">z</text>
+    <text x="165" y="35" class="sketch-text" style="font-size: 24px; fill: #a0aec0; font-weight: bold;">z</text>
+
+    <text x="155" y="180" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #2c5282;">Idle &amp; Wasting Budget</text>
+    <text x="155" y="205" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">Allocated but receives no math work.</text>
+    <text x="155" y="222" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">Costing $1.50/hr for zero return.</text>
+  </g>
+</svg>
