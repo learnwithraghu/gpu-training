@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colab Workflow and Benchmark Hygiene</title>
+  <title>Glossary</title>
   <style>
   :root{
     --bg:#141416;
@@ -95,33 +95,16 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="site-name">GPU Engineering From Scratch</div>
-      <nav aria-label="Global"><a class="nav-link" href="../index.html">Contents</a><a class="nav-link" href="../catalog.html">Catalog</a><a class="nav-link" href="../roadmap.html">Roadmap</a><a class="nav-link" href="../glossary.html">Glossary</a></nav>
+      <nav aria-label="Global"><a class="nav-link" href="index.html">Contents</a><a class="nav-link" href="catalog.html">Catalog</a><a class="nav-link" href="roadmap.html">Roadmap</a><a class="nav-link" href="glossary.html" aria-current="page">Glossary</a></nav>
     </div>
   </header>
   <main class="container" id="content">
-    <div class="lesson-shell"><article class="panel"><p><a href="../index.html">Back to Contents</a> | <a href="../catalog.html">Open Catalog</a></p>
-<h2>Motto</h2>
-<p>Fast claims are useless without clean measurement.</p>
-
-<h2>Problem</h2>
-<p>Colab benchmarks can be noisy because first-run overhead, data transfer, and session changes skew results.</p>
-
-<h2>Concept</h2>
-<p>Reliable GPU benchmarking needs warmup, synchronized timing, repeated trials, and clear reporting of configuration.</p>
-
-<h2>Build It</h2>
-<p>You will apply this standard in all Build lessons.</p>
-
-<h2>Use It</h2>
-<p>Use the benchmark checklist before publishing any speedup claim.</p>
-
-<h2>Ship It</h2>
-<p>Publish benchmark reporting template in <code>outputs/benchmark-report-template.md</code>.</p></article><aside class="lesson-sidebar"><span class='muted'>Notebook pending.</span><div class='panel'><strong>Colab Workflow and Benchmark Hygiene</strong><dl class='fact-grid'><dt>Type</dt><dd>Learn</dd><dt>Status</dt><dd>Documented</dd><dt>Duration</dt><dd class='mono'>35 min</dd><dt>Runtime</dt><dd>Google Colab</dd><dt>Roles</dt><dd><span class='muted'>-</span></dd><dt>Prerequisites</dt><dd>Lesson 00.01 completed</dd><dt>Objectives</dt><dd>Avoid common benchmark mistakes in Colab, Structure notebooks for reproducible timing</dd></dl></div><div class='panel'><strong>Outputs</strong><ul><li><a href="https://github.com/raghunandanask/gpu-training/blob/main/phases/00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene/outputs/benchmark-report-template.md" target="_blank" rel="noreferrer">Benchmark Report Template</a> <span class="pill">benchmark-summary</span></li></ul></div><div class='panel checks'><label><input type="checkbox" data-lesson-check="ran" data-lesson-id="00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene" /> Ran Colab notebook</label><label><input type="checkbox" data-lesson-check="artifact" data-lesson-id="00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene" /> Saved artifact to outputs/</label><button type="button" data-mark-complete="00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene">Mark complete</button></div><div class='panel mono'><a href="../lessons/00-colab-and-gpu-setup__01-colab-runtime-and-gpu-check.html">Previous</a> | <a href="../lessons/00-colab-and-gpu-setup__03-colab-benchmarking-starter-lab.html">Next</a></div></aside></div>
+    <h1>Glossary</h1><p class='muted'>Plain-language terms used across labs and capstones.</p><h2 id="cuda-core">CUDA Core</h2><p>A processing unit on NVIDIA GPUs optimized for parallel arithmetic operations.</p><h2 id="tensor-core">Tensor Core</h2><p>Specialized GPU unit optimized for matrix operations used in deep learning.</p><h2 id="vram">VRAM</h2><p>GPU memory where tensors and model parameters are stored during execution.</p><h2 id="throughput">Throughput</h2><p>How much work is completed per unit time.</p><h2 id="latency">Latency</h2><p>Time taken for one request or operation to complete.</p><h2 id="mixed-precision">Mixed Precision</h2><p>Using lower precision data types (like FP16) to speed up compute and reduce memory usage.</p><h2 id="batch-size">Batch Size</h2><p>Number of samples processed together in one forward/backward pass.</p>
     <footer class="site-footer">
       Colab-first curriculum. Open source on GitHub.
     </footer>
   </main>
-  <script src="../progress.js" defer></script>
+  <script src="progress.js" defer></script>
   <script>
     document.querySelectorAll('pre').forEach((pre)=>{
       const btn=document.createElement('button');
@@ -138,12 +121,5 @@
     });
   </script>
   
-<script>
-window.addEventListener('DOMContentLoaded',()=>{
-  if(!window.GPUProgress) return;
-  window.GPUProgress.bindLessonControls();
-});
-</script>
-
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colab Workflow and Benchmark Hygiene</title>
+  <title>Roadmap</title>
   <style>
   :root{
     --bg:#141416;
@@ -95,33 +95,98 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="site-name">GPU Engineering From Scratch</div>
-      <nav aria-label="Global"><a class="nav-link" href="../index.html">Contents</a><a class="nav-link" href="../catalog.html">Catalog</a><a class="nav-link" href="../roadmap.html">Roadmap</a><a class="nav-link" href="../glossary.html">Glossary</a></nav>
+      <nav aria-label="Global"><a class="nav-link" href="index.html">Contents</a><a class="nav-link" href="catalog.html">Catalog</a><a class="nav-link" href="roadmap.html" aria-current="page">Roadmap</a><a class="nav-link" href="glossary.html">Glossary</a></nav>
     </div>
   </header>
   <main class="container" id="content">
-    <div class="lesson-shell"><article class="panel"><p><a href="../index.html">Back to Contents</a> | <a href="../catalog.html">Open Catalog</a></p>
-<h2>Motto</h2>
-<p>Fast claims are useless without clean measurement.</p>
+    <h1>Syllabus and Roadmap</h1><p class='muted'>Curriculum structure plus milestone waves for delivery.</p><section class='panel'><h2>Syllabus</h2><h1>Syllabus</h1>
 
-<h2>Problem</h2>
-<p>Colab benchmarks can be noisy because first-run overhead, data transfer, and session changes skew results.</p>
+<h2>Phase 00 - Colab and GPU Setup</h2>
 
-<h2>Concept</h2>
-<p>Reliable GPU benchmarking needs warmup, synchronized timing, repeated trials, and clear reporting of configuration.</p>
+<p>Goal: make every learner productive in Google Colab with GPU runtime checks and baseline benchmarking habits.</p>
 
-<h2>Build It</h2>
-<p>You will apply this standard in all Build lessons.</p>
+<h2>Phase 01 - GPU Fundamentals</h2>
 
-<h2>Use It</h2>
-<p>Use the benchmark checklist before publishing any speedup claim.</p>
+<p>Goal: build intuition for CPU vs GPU, memory hierarchy, throughput/latency, and matrix multiplication performance.</p>
 
-<h2>Ship It</h2>
-<p>Publish benchmark reporting template in <code>outputs/benchmark-report-template.md</code>.</p></article><aside class="lesson-sidebar"><span class='muted'>Notebook pending.</span><div class='panel'><strong>Colab Workflow and Benchmark Hygiene</strong><dl class='fact-grid'><dt>Type</dt><dd>Learn</dd><dt>Status</dt><dd>Documented</dd><dt>Duration</dt><dd class='mono'>35 min</dd><dt>Runtime</dt><dd>Google Colab</dd><dt>Roles</dt><dd><span class='muted'>-</span></dd><dt>Prerequisites</dt><dd>Lesson 00.01 completed</dd><dt>Objectives</dt><dd>Avoid common benchmark mistakes in Colab, Structure notebooks for reproducible timing</dd></dl></div><div class='panel'><strong>Outputs</strong><ul><li><a href="https://github.com/raghunandanask/gpu-training/blob/main/phases/00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene/outputs/benchmark-report-template.md" target="_blank" rel="noreferrer">Benchmark Report Template</a> <span class="pill">benchmark-summary</span></li></ul></div><div class='panel checks'><label><input type="checkbox" data-lesson-check="ran" data-lesson-id="00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene" /> Ran Colab notebook</label><label><input type="checkbox" data-lesson-check="artifact" data-lesson-id="00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene" /> Saved artifact to outputs/</label><button type="button" data-mark-complete="00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene">Mark complete</button></div><div class='panel mono'><a href="../lessons/00-colab-and-gpu-setup__01-colab-runtime-and-gpu-check.html">Previous</a> | <a href="../lessons/00-colab-and-gpu-setup__03-colab-benchmarking-starter-lab.html">Next</a></div></aside></div>
+<h2>Phase 02 - GPU Programming Without Fear</h2>
+
+<p>Goal: teach practical acceleration patterns (vectorization, device placement, avoiding transfer overhead).</p>
+
+<h2>Phase 03 - GPUs for Data Science</h2>
+
+<p>Goal: improve model training speed and memory efficiency with practical PyTorch techniques.</p>
+
+<h2>Phase 04 - GPUs for Data Engineering</h2>
+
+<p>Goal: apply GPU acceleration to ETL and analytics workflows.</p>
+
+<h2>Phase 05 - GPUs for DevOps and MLOps</h2>
+
+<p>Goal: understand GPU scheduling, observability, and serving tradeoffs in production-like scenarios.</p>
+
+<h2>Phase 06 - Optimization and Cost Engineering</h2>
+
+<p>Goal: optimize for both speed and cost with precision, batching, and quantization techniques.</p>
+
+<h2>Phase 07 - Capstone Projects by Role</h2>
+
+<p>Goal: deliver role-specific capstones for DevOps, Data Science, and Data Engineering tracks.</p></section><section class='panel' style='margin-top:14px'><h2>Wave Milestones</h2><h1>Roadmap</h1>
+
+<h2>Phase Rollout Strategy</h2>
+
+<h3>Wave 1 (MVP Foundations)</h3>
+
+<ul>
+<li>Complete <code>00-colab-and-gpu-setup</code>.</li>
+<li>Complete <code>01-gpu-fundamentals</code>.</li>
+<li>Launch public GitHub Pages site with copy-enabled code blocks.</li>
+</ul>
+
+<h3>Wave 2 (Acceleration Core)</h3>
+
+<ul>
+<li>Ship <code>02-gpu-programming-without-fear</code>.</li>
+<li>Ship <code>03-gpus-for-data-science</code>.</li>
+<li>Add mixed precision and batch tuning benchmark labs.</li>
+</ul>
+
+<h3>Wave 3 (Infrastructure and Data)</h3>
+
+<ul>
+<li>Ship <code>04-gpus-for-data-engineering</code>.</li>
+<li>Ship <code>05-gpus-for-devops-mlops</code>.</li>
+<li>Add production simulation artifacts (runbooks, profiling templates).</li>
+</ul>
+
+<h3>Wave 4 (Optimization and Capstone)</h3>
+
+<ul>
+<li>Ship <code>06-optimization-and-cost-engineering</code>.</li>
+<li>Ship <code>07-capstone-projects-by-role</code>.</li>
+<li>Publish role-specific capstone rubrics and completion criteria.</li>
+</ul>
+
+<h2>Quality Standards</h2>
+
+<ul>
+<li>Each Build/Project lesson has a runnable Colab notebook.</li>
+<li>Each lesson has <code>docs/en.md</code> and at least one output artifact.</li>
+<li>Catalog generation and lesson validation pass in CI.</li>
+</ul>
+
+<h2>Success Metrics</h2>
+
+<ul>
+<li>Learners can run all MVP labs in Colab without local setup.</li>
+<li>Lesson pages provide copy buttons for every code block.</li>
+<li>GitHub Pages deployment is automated and stable.</li>
+</ul></section>
     <footer class="site-footer">
       Colab-first curriculum. Open source on GitHub.
     </footer>
   </main>
-  <script src="../progress.js" defer></script>
+  <script src="progress.js" defer></script>
   <script>
     document.querySelectorAll('pre').forEach((pre)=>{
       const btn=document.createElement('button');
@@ -138,12 +203,5 @@
     });
   </script>
   
-<script>
-window.addEventListener('DOMContentLoaded',()=>{
-  if(!window.GPUProgress) return;
-  window.GPUProgress.bindLessonControls();
-});
-</script>
-
 </body>
 </html>
