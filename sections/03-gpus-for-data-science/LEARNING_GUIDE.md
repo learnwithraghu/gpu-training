@@ -29,3 +29,18 @@ Maintain instructor persona directly in notebook text, not only in live narratio
 ## Notebook
 
 - `notebooks/01-training-benchmark-and-tuning.ipynb`
+
+## Solo Learner Experience (new)
+
+This is one of the highest-ROI notebooks for real practitioners. Solo learners now receive:
+
+- After the tuning experiments: deep **Interpretation** of what the throughput vs memory numbers actually mean for production decisions
+- Named **Misconception repair** for the "always max out the batch size" and "AMP is only for experts" myths
+- Complete **Model answers** to the checkpoint questions with the practical nuance
+- Empathetic coaching that acknowledges "if you are feeling lost about what number to actually ship with, that feeling is correct and healthy"
+
+Ends with **Lesson Recap**, **Role Lens** for all three job families, and a strong bridge into the data engineering sections.
+
+Live teaching still works exactly as before using the prediction and decision prompts. The new cells become the permanent reference the learner keeps open in the second monitor while they tune their actual models.
+
+See `../LEARNER_TUTOR_DESIGN.md` for the full standard.

@@ -29,3 +29,20 @@ Prioritize fast feedback loops over long cells.
 ## Notebook
 
 - `notebooks/01-device-placement-and-vectorization.ipynb`
+
+## Solo Learner Experience (new)
+
+This notebook was one of the highest-leverage places to add depth because the "move once" rule is where most people silently fail for months.
+
+Solo learners now get:
+
+- After the critical experiments: full **Interpretation** of why the placement change dominates the vectorization change
+- Named **Misconception repair** for the "I will just put everything on the GPU at the top of the script" trap
+- A complete **Model answer** to the checkpoint plus the key distinction
+- Empathetic language that says "this is the section where a lot of people quietly realize their code was accidentally CPU-bound"
+
+Ends with **Lesson Recap**, **Role Lens** for all three personas, and a strong forward link to the data-science section.
+
+When teaching live you can still harvest the prediction and checkpoint moments for discussion. The extra cells become the permanent reference the learner can return to the night before a code review or a production incident.
+
+See the overall standard in `../LEARNER_TUTOR_DESIGN.md`.

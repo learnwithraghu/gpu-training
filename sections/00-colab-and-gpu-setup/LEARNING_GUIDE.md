@@ -29,3 +29,18 @@ Keep the pace conversational: pause every 2-3 cells and ask learners what they p
 ## Notebook
 
 - `notebooks/01-runtime-verification-and-baseline.ipynb`
+
+## Solo Learner Experience (new)
+
+The notebook is deliberately written so a person working completely alone still gets a complete coached experience. After every experiment you will find:
+
+- A rich **Interpretation** block that explains the mental model (not just the numbers)
+- **Misconception repair** that names the wrong intuition most people bring and why it feels right
+- A **Model answer** to the checkpoint question plus the key distinction
+- A warm **"If you're still unsure..."** paragraph that normalizes confusion and gives a concrete next action
+
+At the end there is a full **Lesson Recap**, **Role Lens** paragraphs for DevOps / Data Science / Data Engineering, and a clear **Momentum + Preview** for the next section.
+
+When you teach live, you can still use the prediction prompts and checkpoints for discussion. The extra cells become the "what I would have said if we had more time" or the handout for anyone who wants the deeper version later.
+
+This is the new standard for all notebooks in `sections/`. See `../LEARNER_TUTOR_DESIGN.md`.

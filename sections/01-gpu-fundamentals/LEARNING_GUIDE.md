@@ -29,3 +29,18 @@ Use a coaching tone: "pause and ask", "common mistake", and "debug hint" cues sh
 ## Notebook
 
 - `notebooks/01-cpu-vs-gpu-intuition-lab.ipynb`
+
+## Solo Learner Experience (new)
+
+The notebook now contains the complete coached loop for someone studying alone:
+
+- After each experiment: Interpretation that explains the *why*, not just the numbers
+- Explicit **Misconception repair** for the intuitions that feel right but are wrong
+- Full **Model answer** to the checkpoint questions with the key distinction called out
+- Warm support language for the moment when a solo learner would normally get stuck
+
+The notebook ends with a **Lesson Recap**, three **Role Lens** paragraphs (DevOps, Data Science, Data Engineering), and a **Momentum + Preview** that tells the learner exactly what they are now ready for.
+
+Live instructors can still drive discussion from the prediction and checkpoint prompts. The new cells serve as the "deeper explanation I would give if time allowed" or as post-class reading.
+
+This pattern is now the standard across `sections/`. Reference `../LEARNER_TUTOR_DESIGN.md`.

@@ -1,5 +1,13 @@
 # Roadmap
 
+## Tutor Experience (highest priority 2026)
+
+The single biggest complaint from solo learners was "I feel like I'm getting half the information and there is no human in the loop." We are fixing this by turning every notebook into a complete coached conversation.
+
+- All learner experience improvements now happen exclusively inside `sections/` (the declared source of truth).
+- New standard is documented in `sections/LEARNER_TUTOR_DESIGN.md`.
+- First three foundational notebooks (00, 01, 02) have been upgraded with full interpretation, misconception repair, model answers, role lenses, and warm coaching language. The remaining five will follow in the same wave.
+
 ## Section Rollout Strategy
 
 ### Wave 1 (MVP Foundations)
@@ -29,11 +37,14 @@
 ## Quality Standards
 
 - Each section notebook uses short code cells (2-6 lines) with markdown coaching between them.
-- Each notebook contains explicit checkpoint prompts and expected-output guidance.
+- Every notebook follows the full coached learning loop defined in `sections/LEARNER_TUTOR_DESIGN.md`: prediction → experiment → interpretation → misconception repair → model answer → recap → role lens → momentum/preview.
+- The notebook must be a first-class artifact for a solo learner; the `LEARNING_GUIDE.md` is the live-instructor companion, not a requirement for understanding.
 - Every section remains directly teachable from `LEARNING_GUIDE.md`.
 
 ## Success Metrics
 
+- Learners (especially solo) report that they can finish a notebook and confidently explain the concepts to a teammate without re-reading the material.
+- A solo learner never feels they only got "half the story" — every conceptual loose end is closed inside the notebook itself.
 - Learners can run all MVP labs in Colab without local setup.
 - Learners can follow notebooks with minimal typing fatigue.
-- Instructors can run a full session directly from section materials.
+- Instructors can run a full session directly from section materials and also hand the same notebook to a self-paced student with confidence.
