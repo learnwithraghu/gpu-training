@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .box-border { fill: none; stroke: #4a5568; stroke-width: 2.5; rx: 8; stroke-linejoin: round; }
+    .vram-box { fill: #e6fffa; stroke: #38a169; stroke-width: 3; }
+    .inner-box { fill: #fff; stroke: #4a5568; stroke-width: 2; rx: 6; }
+    .loop-path { stroke: #dd6b20; stroke-width: 2.5; fill: none; stroke-dasharray: 5 4; }
+  </style>
+
+  <defs>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dd6b20" />
+    </marker>
+  </defs>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">Model Training: On-GPU Loop</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Why keeping model weights and inputs in VRAM is crucial for fast epochs.</text>
+
+  <!-- The GPU VRAM Boundary Box -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="600" height="280" class="box-border vram-box" />
+    <text x="20" y="30" class="sketch-text" style="font-weight: bold; fill: #22543d; font-size: 15px;">GPU VRAM Island (No PCIe crossing during epochs!)</text>
+
+    <!-- Sub-containers representing variables in VRAM -->
+    <!-- Input Data -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="160" height="80" class="inner-box" style="stroke: #3182ce;" />
+      <text x="80" y="30" class="sketch-text" style="font-weight: bold; fill: #2b6cb0; text-anchor: middle;">Data: x, y</text>
+      <text x="80" y="55" class="sketch-text" style="font-size: 11px; fill: #718096; text-anchor: middle;">x.to("cuda"), y.to("cuda")</text>
+    </g>
+
+    <!-- Model Parameters -->
+    <g transform="translate(30, 160)">
+      <rect x="0" y="0" width="160" height="90" class="inner-box" style="stroke: #38a169;" />
+      <text x="80" y="30" class="sketch-text" style="font-weight: bold; fill: #276749; text-anchor: middle;">Model: w, b</text>
+      <text x="80" y="55" class="sketch-text" style="font-size: 11px; fill: #718096; text-anchor: middle;">model.to("cuda")</text>
+      <text x="80" y="72" class="sketch-text" style="font-size: 10px; fill: #718096; text-anchor: middle; font-style: italic;">Weights/biases in VRAM</text>
+    </g>
+
+    <!-- Training Loop Cycle -->
+    <g transform="translate(240, 60)">
+      <rect x="0" y="0" width="330" height="190" class="inner-box" style="stroke: #dd6b20; fill: #fffaf0;" />
+      <text x="165" y="30" class="sketch-text" style="font-weight: bold; fill: #c05621; text-anchor: middle; font-size: 14px;">The Epoch Training Loop</text>
+      
+      <!-- Loop steps -->
+      <text x="30" y="70" class="sketch-text" style="font-weight: bold; fill: #4a5568;">1. Forward: pred = model(x)</text>
+      <text x="30" y="100" class="sketch-text" style="font-weight: bold; fill: #4a5568;">2. Loss: loss_fn(pred, y)</text>
+      <text x="30" y="130" class="sketch-text" style="font-weight: bold; fill: #4a5568;">3. Backward: loss.backward()</text>
+      <text x="30" y="160" class="sketch-text" style="font-weight: bold; fill: #4a5568;">4. Step: optimizer.step()</text>
+
+      <!-- Connection back to top -->
+      <path d="M 300 160 L 315 160 Q 330 115 315 70 L 290 70" class="loop-path" marker-end="url(#arrow-orange)" />
+      <text x="325" y="120" class="sketch-text" style="font-size: 9.5px; fill: #dd6b20; font-weight: bold; transform: rotate(90deg); transform-origin: 325px 120px; text-anchor: middle;">Repeat 10x</text>
+    </g>
+  </g>
+</svg>
