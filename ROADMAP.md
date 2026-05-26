@@ -6,7 +6,8 @@ The single biggest complaint from solo learners was "I feel like I'm getting hal
 
 - All learner experience improvements now happen exclusively inside `sections/` (the declared source of truth).
 - New standard is documented in `sections/LEARNER_TUTOR_DESIGN.md`.
-- First three foundational notebooks (00, 01, 02) have been upgraded with full interpretation, misconception repair, model answers, role lenses, and warm coaching language. The remaining five will follow in the same wave.
+- Section 02 notebook has been fully rewritten in the new Visual Intuition style (custom matplotlib GPU diagrams for memory hierarchy and "transfer storms", learner mutates the pictures, Karpathy-style diagnostic visuals as the primary teaching medium instead of walls of text). See `sections/02-gpu-programming-without-fear/LEARNING_GUIDE.md` + `sections/LEARNER_TUTOR_DESIGN.md`.
+- Notebooks 00, 01, and 03 will be redone in the same visual style next (the earlier text-heavy pass is now considered an intermediate prototype).
 
 ## Section Rollout Strategy
 
@@ -37,7 +38,7 @@ The single biggest complaint from solo learners was "I feel like I'm getting hal
 ## Quality Standards
 
 - Each section notebook uses short code cells (2-6 lines) with markdown coaching between them.
-- Every notebook follows the full coached learning loop defined in `sections/LEARNER_TUTOR_DESIGN.md`: prediction → experiment → interpretation → misconception repair → model answer → recap → role lens → momentum/preview.
+- Every notebook follows the Visual Intuition contract in `sections/LEARNER_TUTOR_DESIGN.md`: build or invoke a custom visualizer that makes the core concept visible → run the real experiment → feed the numbers into the picture → let the learner mutate the visual → short diagnostic caption + one killer question about what changed in the picture. The visuals (not prose walls) carry the interpretation, model answer, and misconception repair.
 - The notebook must be a first-class artifact for a solo learner; the `LEARNING_GUIDE.md` is the live-instructor companion, not a requirement for understanding.
 - Every section remains directly teachable from `LEARNING_GUIDE.md`.
 
