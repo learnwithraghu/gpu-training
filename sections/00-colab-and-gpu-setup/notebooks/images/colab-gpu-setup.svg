@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <!-- Styles for hand-drawn paper-pencil look -->
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .box-border { fill: none; stroke: #4a5568; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .connector-line { stroke: #e53e3e; stroke-width: 2.5; stroke-dasharray: 6 4; fill: none; stroke-linecap: round; }
+    .browser-header { fill: #edf2f7; stroke: #4a5568; stroke-width: 2; rx: 6; }
+    .cpu-node { fill: #ebf8ff; stroke: #3182ce; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; rx: 8; }
+    .gpu-node { fill: #e6fffa; stroke: #38a169; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; rx: 8; }
+  </style>
+
+  <defs>
+    <!-- Arrow definitions -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#e53e3e" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38a169" />
+    </marker>
+  </defs>
+
+  <!-- Faint pencil grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">Google Colab Runtime Setup</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">How your browser connects to the cloud CPU/GPU hardware.</text>
+
+  <!-- Local Browser Box (Your Laptop) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="220" height="280" rx="8" class="box-border" />
+    <text x="110" y="-12" class="sketch-text" style="font-weight: bold; text-anchor: middle; font-size: 15px;">Your Laptop</text>
+    
+    <!-- Browser Window Outline -->
+    <rect x="15" y="25" width="190" height="230" rx="6" class="box-border" style="stroke-width: 1.8;" />
+    <!-- Browser Title Bar -->
+    <rect x="15" y="25" width="190" height="25" class="browser-header" />
+    <!-- Three dots representing browser controls -->
+    <circle cx="30" cy="37" r="4" fill="#fc8181" />
+    <circle cx="45" cy="37" r="4" fill="#f6e05e" />
+    <circle cx="60" cy="37" r="4" fill="#68d391" />
+    <text x="110" y="42" class="sketch-text" style="font-size: 10px; text-anchor: middle; fill: #718096;">colab.research.google.com</text>
+
+    <!-- Browser Content (Python code sketch) -->
+    <text x="30" y="90" class="sketch-text" style="font-family: monospace; font-size: 12px; fill: #4a5568;">import torch</text>
+    <text x="30" y="115" class="sketch-text" style="font-family: monospace; font-size: 12px; fill: #4a5568;">x = torch.tensor([1,2,3])</text>
+    <text x="30" y="140" class="sketch-text" style="font-family: monospace; font-size: 12px; fill: #2b6cb0;">x = x.to("cuda")</text>
+    
+    <!-- Annotation -->
+    <text x="110" y="200" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #718096; font-style: italic;">Sends code requests...</text>
+  </g>
+
+  <!-- Network Cloud / Connection -->
+  <g transform="translate(300, 200)">
+    <path d="M -10 30 Q 80 -10 160 30" class="connector-line" marker-end="url(#arrow-red)" />
+    <text x="75" y="0" class="sketch-text" style="fill: #e53e3e; font-weight: bold; text-anchor: middle;">Cloud Bridge</text>
+  </g>
+
+  <!-- Google Cloud Virtual Machine (Server) -->
+  <g transform="translate(480, 110)">
+    <rect x="0" y="0" width="260" height="280" rx="8" class="box-border" />
+    <text x="130" y="-12" class="sketch-text" style="font-weight: bold; text-anchor: middle; font-size: 15px;">Google Cloud Server</text>
+
+    <!-- PyTorch Bridge / Translator -->
+    <rect x="25" y="25" width="210" height="55" rx="6" style="fill: #ffedd5; stroke: #dd6b20; stroke-width: 2;" />
+    <text x="130" y="50" class="sketch-text" style="font-weight: bold; fill: #c05621; text-anchor: middle; font-size: 13.5px;">PyTorch (Translator)</text>
+    <text x="130" y="68" class="sketch-text" style="fill: #c05621; text-anchor: middle; font-size: 10px;">Interprets device="cuda" commands</text>
+
+    <!-- CPU Node (Default) -->
+    <g transform="translate(25, 100)">
+      <rect x="0" y="0" width="210" height="65" class="cpu-node" />
+      <text x="15" y="25" class="sketch-text" style="font-weight: bold; fill: #2b6cb0;">CPU (Default)</text>
+      <text x="15" y="42" class="sketch-text" style="font-size: 11px; fill: #4a5568;">Standard "stove". Good for basic scripts.</text>
+      <text x="15" y="55" class="sketch-text" style="font-size: 9.5px; fill: #718096; font-style: italic;">No parallel speedup for tensor operations.</text>
+    </g>
+
+    <!-- GPU Node (Turned on) -->
+    <g transform="translate(25, 185)">
+      <rect x="0" y="0" width="210" height="75" class="gpu-node" />
+      <text x="15" y="25" class="sketch-text" style="font-weight: bold; fill: #22543d;">GPU (T4 / Accelerated) ✅</text>
+      <text x="15" y="45" class="sketch-text" style="font-size: 11px; fill: #2f855a; font-weight: bold;">Supercharged parallel engine.</text>
+      <text x="15" y="60" class="sketch-text" style="font-size: 11px; fill: #4a5568;">Required to run "cuda" operations.</text>
+      
+      <!-- Connect PyTorch to GPU -->
+      <path d="M -15 -20 L -15 20" stroke="#38a169" stroke-width="2" marker-end="url(#arrow-green)" fill="none" transform="translate(195, 0)" />
+    </g>
+  </g>
+</svg>
