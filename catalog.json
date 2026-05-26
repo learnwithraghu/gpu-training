@@ -1,0 +1,149 @@
+{
+  "name": "GPU Engineering From Scratch (Colab First)",
+  "runtime_policy": "colab_only",
+  "phase_count": 8,
+  "phases": [
+    {
+      "id": "00-colab-and-gpu-setup",
+      "title": "00 Colab And Gpu Setup",
+      "path": "phases/00-colab-and-gpu-setup",
+      "lessons": [
+        {
+          "id": "00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check",
+          "slug": "01-colab-runtime-and-gpu-check",
+          "title": "Colab Runtime and GPU Check",
+          "type": "Build",
+          "duration_minutes": 30,
+          "runtime": "Google Colab",
+          "colab_url": "https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check/notebook/main.ipynb",
+          "doc_path": "phases/00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check/docs/en.md",
+          "notebook_path": "phases/00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check/notebook/main.ipynb",
+          "outputs_path": "phases/00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check/outputs"
+        },
+        {
+          "id": "00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene",
+          "slug": "02-colab-workflow-and-benchmark-hygiene",
+          "title": "Colab Workflow and Benchmark Hygiene",
+          "type": "Learn",
+          "duration_minutes": 35,
+          "runtime": "Google Colab",
+          "colab_url": "",
+          "doc_path": "phases/00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene/docs/en.md",
+          "notebook_path": "",
+          "outputs_path": "phases/00-colab-and-gpu-setup/02-colab-workflow-and-benchmark-hygiene/outputs"
+        },
+        {
+          "id": "00-colab-and-gpu-setup/03-colab-benchmarking-starter-lab",
+          "slug": "03-colab-benchmarking-starter-lab",
+          "title": "Colab Benchmarking Starter Lab",
+          "type": "Build",
+          "duration_minutes": 45,
+          "runtime": "Google Colab",
+          "colab_url": "https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/00-colab-and-gpu-setup/03-colab-benchmarking-starter-lab/notebook/main.ipynb",
+          "doc_path": "phases/00-colab-and-gpu-setup/03-colab-benchmarking-starter-lab/docs/en.md",
+          "notebook_path": "phases/00-colab-and-gpu-setup/03-colab-benchmarking-starter-lab/notebook/main.ipynb",
+          "outputs_path": "phases/00-colab-and-gpu-setup/03-colab-benchmarking-starter-lab/outputs"
+        }
+      ],
+      "lesson_count": 3
+    },
+    {
+      "id": "01-gpu-fundamentals",
+      "title": "01 Gpu Fundamentals",
+      "path": "phases/01-gpu-fundamentals",
+      "lessons": [
+        {
+          "id": "01-gpu-fundamentals/01-cpu-vs-gpu-architecture-intuition",
+          "slug": "01-cpu-vs-gpu-architecture-intuition",
+          "title": "CPU vs GPU Architecture Intuition",
+          "type": "Learn",
+          "duration_minutes": 35,
+          "runtime": "Google Colab",
+          "colab_url": "",
+          "doc_path": "phases/01-gpu-fundamentals/01-cpu-vs-gpu-architecture-intuition/docs/en.md",
+          "notebook_path": "",
+          "outputs_path": "phases/01-gpu-fundamentals/01-cpu-vs-gpu-architecture-intuition/outputs"
+        },
+        {
+          "id": "01-gpu-fundamentals/02-cpu-vs-gpu-matrix-multiplication-lab",
+          "slug": "02-cpu-vs-gpu-matrix-multiplication-lab",
+          "title": "CPU vs GPU Matrix Multiplication Lab",
+          "type": "Build",
+          "duration_minutes": 60,
+          "runtime": "Google Colab",
+          "colab_url": "https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/01-gpu-fundamentals/02-cpu-vs-gpu-matrix-multiplication-lab/notebook/main.ipynb",
+          "doc_path": "phases/01-gpu-fundamentals/02-cpu-vs-gpu-matrix-multiplication-lab/docs/en.md",
+          "notebook_path": "phases/01-gpu-fundamentals/02-cpu-vs-gpu-matrix-multiplication-lab/notebook/main.ipynb",
+          "outputs_path": "phases/01-gpu-fundamentals/02-cpu-vs-gpu-matrix-multiplication-lab/outputs"
+        },
+        {
+          "id": "01-gpu-fundamentals/03-vram-monitoring-lab",
+          "slug": "03-vram-monitoring-lab",
+          "title": "VRAM Monitoring Lab",
+          "type": "Build",
+          "duration_minutes": 45,
+          "runtime": "Google Colab",
+          "colab_url": "https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/01-gpu-fundamentals/03-vram-monitoring-lab/notebook/main.ipynb",
+          "doc_path": "phases/01-gpu-fundamentals/03-vram-monitoring-lab/docs/en.md",
+          "notebook_path": "phases/01-gpu-fundamentals/03-vram-monitoring-lab/notebook/main.ipynb",
+          "outputs_path": "phases/01-gpu-fundamentals/03-vram-monitoring-lab/outputs"
+        },
+        {
+          "id": "01-gpu-fundamentals/04-throughput-vs-latency-and-role-mapping",
+          "slug": "04-throughput-vs-latency-and-role-mapping",
+          "title": "Throughput vs Latency and Role Mapping",
+          "type": "Learn",
+          "duration_minutes": 30,
+          "runtime": "Google Colab",
+          "colab_url": "",
+          "doc_path": "phases/01-gpu-fundamentals/04-throughput-vs-latency-and-role-mapping/docs/en.md",
+          "notebook_path": "",
+          "outputs_path": "phases/01-gpu-fundamentals/04-throughput-vs-latency-and-role-mapping/outputs"
+        }
+      ],
+      "lesson_count": 4
+    },
+    {
+      "id": "02-gpu-programming-without-fear",
+      "title": "02 Gpu Programming Without Fear",
+      "path": "phases/02-gpu-programming-without-fear",
+      "lessons": [],
+      "lesson_count": 0
+    },
+    {
+      "id": "03-gpus-for-data-science",
+      "title": "03 Gpus For Data Science",
+      "path": "phases/03-gpus-for-data-science",
+      "lessons": [],
+      "lesson_count": 0
+    },
+    {
+      "id": "04-gpus-for-data-engineering",
+      "title": "04 Gpus For Data Engineering",
+      "path": "phases/04-gpus-for-data-engineering",
+      "lessons": [],
+      "lesson_count": 0
+    },
+    {
+      "id": "05-gpus-for-devops-mlops",
+      "title": "05 Gpus For Devops Mlops",
+      "path": "phases/05-gpus-for-devops-mlops",
+      "lessons": [],
+      "lesson_count": 0
+    },
+    {
+      "id": "06-optimization-and-cost-engineering",
+      "title": "06 Optimization And Cost Engineering",
+      "path": "phases/06-optimization-and-cost-engineering",
+      "lessons": [],
+      "lesson_count": 0
+    },
+    {
+      "id": "07-capstone-projects-by-role",
+      "title": "07 Capstone Projects By Role",
+      "path": "phases/07-capstone-projects-by-role",
+      "lessons": [],
+      "lesson_count": 0
+    }
+  ]
+}

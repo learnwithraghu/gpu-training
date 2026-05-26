@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VRAM Monitoring Lab</title>
+  <style>
+  body{font-family:Arial,sans-serif;background:#0e1116;color:#e6edf3;margin:0}
+  .container{max-width:980px;margin:0 auto;padding:24px}
+  a{color:#7db3ff}
+  pre{background:#111827;padding:12px;border-radius:8px;overflow:auto;position:relative}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .pill{display:inline-block;border:1px solid #374151;border-radius:999px;padding:2px 8px;font-size:12px;margin-left:6px}
+  .copy-button{position:absolute;top:8px;right:8px;background:#1f2937;color:#fff;border:1px solid #374151;border-radius:6px;padding:4px 8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <p><a href="../index.html">Back to curriculum</a></p><p><a href="https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/01-gpu-fundamentals/03-vram-monitoring-lab/notebook/main.ipynb" target="_blank" rel="noreferrer">Open in Colab</a></p>
+<p>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/01-gpu-fundamentals/03-vram-monitoring-lab/notebook/main.ipynb)</p>
+
+<h2>Motto</h2>
+<p>If you cannot read memory, you cannot optimize GPU code.</p>
+
+<h2>Problem</h2>
+<p>Out-of-memory failures and silent memory bloat are common for beginners.</p>
+
+<h2>Concept</h2>
+<p>PyTorch tracks allocated and reserved memory. Memory summaries reveal fragmentation, peaks, and trends.</p>
+
+<h2>Build It</h2>
+<p>Allocate tensors of increasing size and inspect memory stats after each step.</p>
+
+<h2>Use It</h2>
+<p>Apply these checks before changing batch size or model architecture.</p>
+
+<h2>Ship It</h2>
+<p>Publish memory debugging notes in <code>outputs/vram-debug-guide.md</code>.</p>
+  </main>
+  <script>
+    document.querySelectorAll('pre').forEach((pre)=>{
+      const btn=document.createElement('button');
+      btn.className='copy-button';
+      btn.textContent='Copy';
+      btn.addEventListener('click',async()=>{
+        const code=pre.querySelector('code');
+        if(!code) return;
+        await navigator.clipboard.writeText(code.innerText);
+        btn.textContent='Copied';
+        setTimeout(()=>btn.textContent='Copy',1000);
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPU vs GPU Architecture Intuition</title>
+  <style>
+  body{font-family:Arial,sans-serif;background:#0e1116;color:#e6edf3;margin:0}
+  .container{max-width:980px;margin:0 auto;padding:24px}
+  a{color:#7db3ff}
+  pre{background:#111827;padding:12px;border-radius:8px;overflow:auto;position:relative}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .pill{display:inline-block;border:1px solid #374151;border-radius:999px;padding:2px 8px;font-size:12px;margin-left:6px}
+  .copy-button{position:absolute;top:8px;right:8px;background:#1f2937;color:#fff;border:1px solid #374151;border-radius:6px;padding:4px 8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <p><a href="../index.html">Back to curriculum</a></p>
+<h2>Motto</h2>
+<p>CPUs excel at low-latency decision making; GPUs excel at high-throughput parallel work.</p>
+
+<h2>Problem</h2>
+<p>Many engineers use GPUs as a black box and cannot explain why some workloads speed up while others do not.</p>
+
+<h2>Concept</h2>
+<p>CPU has fewer powerful cores, strong branch handling, and large caches. GPU has many simpler cores and high memory bandwidth for parallel numerical workloads.</p>
+
+<h2>Build It</h2>
+<p>No coding in this lesson. Build a mental model that predicts workload behavior.</p>
+
+<h2>Use It</h2>
+<p>Apply this model before choosing infrastructure for training or analytics tasks.</p>
+
+<h2>Ship It</h2>
+<p>Write your workload classification checklist in <code>outputs/workload-classification-checklist.md</code>.</p>
+  </main>
+  <script>
+    document.querySelectorAll('pre').forEach((pre)=>{
+      const btn=document.createElement('button');
+      btn.className='copy-button';
+      btn.textContent='Copy';
+      btn.addEventListener('click',async()=>{
+        const code=pre.querySelector('code');
+        if(!code) return;
+        await navigator.clipboard.writeText(code.innerText);
+        btn.textContent='Copied';
+        setTimeout(()=>btn.textContent='Copy',1000);
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

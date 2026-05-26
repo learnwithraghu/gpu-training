@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colab Runtime and GPU Check</title>
+  <style>
+  body{font-family:Arial,sans-serif;background:#0e1116;color:#e6edf3;margin:0}
+  .container{max-width:980px;margin:0 auto;padding:24px}
+  a{color:#7db3ff}
+  pre{background:#111827;padding:12px;border-radius:8px;overflow:auto;position:relative}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .pill{display:inline-block;border:1px solid #374151;border-radius:999px;padding:2px 8px;font-size:12px;margin-left:6px}
+  .copy-button{position:absolute;top:8px;right:8px;background:#1f2937;color:#fff;border:1px solid #374151;border-radius:6px;padding:4px 8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <p><a href="../index.html">Back to curriculum</a></p><p><a href="https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check/notebook/main.ipynb" target="_blank" rel="noreferrer">Open in Colab</a></p>
+<p>[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/raghunandanask/gpu-training/blob/main/phases/00-colab-and-gpu-setup/01-colab-runtime-and-gpu-check/notebook/main.ipynb)</p>
+
+<h2>Motto</h2>
+<p>Never benchmark before confirming your runtime.</p>
+
+<h2>Problem</h2>
+<p>Learners often run GPU lessons on CPU-only runtime by mistake and get misleading results.</p>
+
+<h2>Concept</h2>
+<p>Colab sessions are ephemeral, so runtime checks must happen every session. <code>nvidia-smi</code> validates hardware, and <code>torch.cuda.is_available()</code> confirms framework access.</p>
+
+<h2>Build It</h2>
+<p>Run setup cells that print GPU model, CUDA availability, memory limits, and a tiny tensor test on GPU.</p>
+
+<h2>Use It</h2>
+<p>Use this lesson as a mandatory preflight before any GPU benchmark or training notebook.</p>
+
+<h2>Ship It</h2>
+<p>Produce a reusable preflight checklist in <code>outputs/gpu-preflight-checklist.md</code>.</p>
+  </main>
+  <script>
+    document.querySelectorAll('pre').forEach((pre)=>{
+      const btn=document.createElement('button');
+      btn.className='copy-button';
+      btn.textContent='Copy';
+      btn.addEventListener('click',async()=>{
+        const code=pre.querySelector('code');
+        if(!code) return;
+        await navigator.clipboard.writeText(code.innerText);
+        btn.textContent='Copied';
+        setTimeout(()=>btn.textContent='Copy',1000);
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

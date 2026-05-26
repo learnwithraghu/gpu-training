@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GPU Curriculum</title>
+  <style>
+  body{font-family:Arial,sans-serif;background:#0e1116;color:#e6edf3;margin:0}
+  .container{max-width:980px;margin:0 auto;padding:24px}
+  a{color:#7db3ff}
+  pre{background:#111827;padding:12px;border-radius:8px;overflow:auto;position:relative}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .pill{display:inline-block;border:1px solid #374151;border-radius:999px;padding:2px 8px;font-size:12px;margin-left:6px}
+  .copy-button{position:absolute;top:8px;right:8px;background:#1f2937;color:#fff;border:1px solid #374151;border-radius:6px;padding:4px 8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>GPU Engineering From Scratch (Colab First)</h1><p>All executable lessons are Colab-only. Use the lesson page to copy code or open notebook directly in Colab.</p><section><h2>00-colab-and-gpu-setup</h2><ul><li><a href="lessons/00-colab-and-gpu-setup__01-colab-runtime-and-gpu-check.html">Colab Runtime and GPU Check</a> <span class="pill">Build</span></li><li><a href="lessons/00-colab-and-gpu-setup__02-colab-workflow-and-benchmark-hygiene.html">Colab Workflow and Benchmark Hygiene</a> <span class="pill">Learn</span></li><li><a href="lessons/00-colab-and-gpu-setup__03-colab-benchmarking-starter-lab.html">Colab Benchmarking Starter Lab</a> <span class="pill">Build</span></li></ul></section><section><h2>01-gpu-fundamentals</h2><ul><li><a href="lessons/01-gpu-fundamentals__01-cpu-vs-gpu-architecture-intuition.html">CPU vs GPU Architecture Intuition</a> <span class="pill">Learn</span></li><li><a href="lessons/01-gpu-fundamentals__02-cpu-vs-gpu-matrix-multiplication-lab.html">CPU vs GPU Matrix Multiplication Lab</a> <span class="pill">Build</span></li><li><a href="lessons/01-gpu-fundamentals__03-vram-monitoring-lab.html">VRAM Monitoring Lab</a> <span class="pill">Build</span></li><li><a href="lessons/01-gpu-fundamentals__04-throughput-vs-latency-and-role-mapping.html">Throughput vs Latency and Role Mapping</a> <span class="pill">Learn</span></li></ul></section><section><h2>02-gpu-programming-without-fear</h2><ul></ul></section><section><h2>03-gpus-for-data-science</h2><ul></ul></section><section><h2>04-gpus-for-data-engineering</h2><ul></ul></section><section><h2>05-gpus-for-devops-mlops</h2><ul></ul></section><section><h2>06-optimization-and-cost-engineering</h2><ul></ul></section><section><h2>07-capstone-projects-by-role</h2><ul></ul></section>
+  </main>
+  <script>
+    document.querySelectorAll('pre').forEach((pre)=>{
+      const btn=document.createElement('button');
+      btn.className='copy-button';
+      btn.textContent='Copy';
+      btn.addEventListener('click',async()=>{
+        const code=pre.querySelector('code');
+        if(!code) return;
+        await navigator.clipboard.writeText(code.innerText);
+        btn.textContent='Copied';
+        setTimeout(()=>btn.textContent='Copy',1000);
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
