@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .bridge-cable { stroke: #718096; stroke-width: 2; stroke-dasharray: 4 4; fill: none; }
+    .island-border { stroke: #4a5568; stroke-width: 3; fill: none; }
+    .water-line { stroke: #bee3f8; stroke-width: 1.5; stroke-dasharray: 10 5; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">The PCIe Bridge: Host vs. Device Memory</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Why data transfers between CPU and GPU are the ultimate performance killer.</text>
+
+  <!-- Water background lines -->
+  <line x1="50" y1="320" x2="750" y2="320" class="water-line" />
+  <line x1="100" y1="340" x2="700" y2="340" class="water-line" />
+
+  <!-- Host Island (Left) -->
+  <path d="M 30 380 L 30 250 Q 80 230 180 250 L 180 380 Z" fill="#ebf8ff" stroke="#3182ce" stroke-width="3" />
+  <text x="105" y="290" class="sketch-text" style="font-weight: bold; fill: #2b6cb0; text-anchor: middle; font-size: 15px;">Host CPU</text>
+  <text x="105" y="310" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #2c5282;">(System RAM)</text>
+
+  <!-- Device Island (Right) -->
+  <path d="M 620 380 L 620 250 Q 700 230 770 250 L 770 380 Z" fill="#e6fffa" stroke="#38a169" stroke-width="3" />
+  <text x="695" y="290" class="sketch-text" style="font-weight: bold; fill: #22543d; text-anchor: middle; font-size: 15px;">Device GPU</text>
+  <text x="695" y="310" class="sketch-text" style="text-anchor: middle; font-size: 11px; fill: #234e52;">(GPU VRAM/HBM)</text>
+  <text x="695" y="340" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #38a169; font-size: 12px;">Fast: ~1.5 TB/s</text>
+
+  <!-- The PCIe Bridge (Connecting the two islands) -->
+  <!-- Support pillars -->
+  <line x1="260" y1="200" x2="260" y2="350" stroke="#4a5568" stroke-width="4" />
+  <line x1="540" y1="200" x2="540" y2="350" stroke="#4a5568" stroke-width="4" />
+  
+  <!-- Bridge Road -->
+  <rect x="180" y="245" width="440" height="15" fill="#e5e7eb" stroke="#4a5568" stroke-width="2.5" rx="3" />
+
+  <!-- Cables -->
+  <path d="M 180 245 Q 260 170 360 215 T 460 215 T 540 170 Q 580 210 620 245" class="bridge-cable" stroke-width="2.5" />
+  <line x1="260" y1="200" x2="540" y2="200" stroke="#718096" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Labels on Bridge -->
+  <text x="400" y="160" class="sketch-text" style="font-weight: bold; fill: #c53030; text-anchor: middle; font-size: 14px;">PCIe Bus Bridge</text>
+  <text x="400" y="180" class="sketch-text" style="fill: #9b2c2c; text-anchor: middle; font-size: 11.5px; font-weight: bold;">Slow Bottleneck: ~32 GB/s</text>
+  
+  <!-- Delivery Truck moving to GPU -->
+  <g transform="translate(340, 222)">
+    <rect x="0" y="5" width="35" height="15" fill="#feb2b2" stroke="#e53e3e" rx="2" />
+    <rect x="25" y="0" width="15" height="20" fill="#fc8181" stroke="#e53e3e" rx="1" />
+    <circle cx="10" cy="22" r="4" fill="#2d3748" />
+    <circle cx="30" cy="22" r="4" fill="#2d3748" />
+    <text x="20" y="15" class="sketch-text" style="font-size: 9px; fill: #fff; font-weight: bold; text-anchor: middle;">Data</text>
+  </g>
+</svg>

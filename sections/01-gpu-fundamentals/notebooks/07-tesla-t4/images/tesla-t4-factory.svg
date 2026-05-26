@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .box-border { fill: none; stroke: #4a5568; stroke-width: 2.5; rx: 8; stroke-linejoin: round; }
+    .cuda-color { fill: #e6fffa; stroke: #38a169; }
+    .tensor-color { fill: #fffaf0; stroke: #dd6b20; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">Nvidia Tesla T4: The Factory Floor</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Analogy: General assembly workers (CUDA Cores) and specialised robots (Tensor Cores).</text>
+
+  <!-- CUDA Cores Box (Left) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="310" height="260" class="box-border cuda-color" />
+    <text x="155" y="30" class="sketch-text" style="font-weight: bold; fill: #22543d; text-anchor: middle; font-size: 15px;">2,560 CUDA Cores</text>
+
+    <!-- Grid of tiny worker symbols -->
+    <g transform="translate(45, 50)">
+      <!-- We draw a few rows of simple worker heads -->
+      <!-- Row 0 -->
+      <circle cx="20" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="50" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="80" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="110" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="140" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="170" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="200" cy="20" r="8" fill="#cbd5e0" stroke="#38a169" />
+      
+      <!-- Row 1 -->
+      <circle cx="20" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="50" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="80" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="110" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="140" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="170" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="200" cy="50" r="8" fill="#cbd5e0" stroke="#38a169" />
+
+      <!-- Row 2 -->
+      <circle cx="20" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="50" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="80" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="110" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="140" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="170" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+      <circle cx="200" cy="80" r="8" fill="#cbd5e0" stroke="#38a169" />
+    </g>
+
+    <text x="155" y="170" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #276749;">General Assembly Workers</text>
+    <text x="155" y="195" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">They execute standard mathematical ops</text>
+    <text x="155" y="212" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">(add, subtract, sine, cosine) in parallel.</text>
+  </g>
+
+  <!-- Tensor Cores Box (Right) -->
+  <g transform="translate(430, 110)">
+    <rect x="0" y="0" width="310" height="260" class="box-border tensor-color" />
+    <text x="155" y="30" class="sketch-text" style="font-weight: bold; fill: #c05621; text-anchor: middle; font-size: 15px;">320 Tensor Cores</text>
+
+    <!-- Robotic arm drawings -->
+    <g transform="translate(30, 50)">
+      <!-- Robot 1 -->
+      <path d="M 30 70 L 60 40 L 90 60" stroke="#dd6b20" stroke-width="4" stroke-linecap="round" fill="none" />
+      <circle cx="30" cy="70" r="6" fill="#4a5568" />
+      <circle cx="60" cy="40" r="6" fill="#4a5568" />
+      <rect x="85" y="55" width="10" height="10" fill="#f6e05e" stroke="#dd6b20" />
+      
+      <!-- Robot 2 -->
+      <path d="M 150 70 L 180 40 L 210 60" stroke="#dd6b20" stroke-width="4" stroke-linecap="round" fill="none" />
+      <circle cx="150" cy="70" r="6" fill="#4a5568" />
+      <circle cx="180" cy="40" r="6" fill="#4a5568" />
+      <rect x="205" y="55" width="10" height="10" fill="#f6e05e" stroke="#dd6b20" />
+    </g>
+
+    <text x="155" y="170" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #7b341e;">Specialised Welding Robots</text>
+    <text x="155" y="195" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">Only perform matrix operations</text>
+    <text x="155" y="212" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">(A &times; B + C) extremely fast in FP16.</text>
+    
+    <!-- 16GB VRAM Storage annotation on the side -->
+    <rect x="20" y="235" width="270" height="18" fill="#e6fffa" stroke="#38a169" rx="3" />
+    <text x="155" y="248" class="sketch-text" style="text-anchor: middle; font-size: 11px; font-weight: bold; fill: #22543d;">Warehouse Storage: 16 GB GDDR6 VRAM</text>
+  </g>
+</svg>

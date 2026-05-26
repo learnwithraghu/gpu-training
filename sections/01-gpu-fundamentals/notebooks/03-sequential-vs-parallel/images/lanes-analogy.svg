@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .lane-border { stroke: #4a5568; stroke-width: 2.5; fill: none; stroke-linecap: round; }
+    .customer-box { fill: #fed7d7; stroke: #e53e3e; stroke-width: 1.5; rx: 4; }
+    .cpu-lane { fill: #ebf8ff; stroke: #3182ce; stroke-width: 2.5; rx: 6; }
+    .gpu-lane { fill: #e6fffa; stroke: #38a169; stroke-width: 2; rx: 6; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">Sequential vs. Parallel Execution</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Analogy: Supermarket checkout lanes. One fast checker vs. many standard checkers.</text>
+
+  <!-- CPU: Sequential Lanes -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="310" height="260" class="cpu-lane" />
+    <text x="155" y="30" class="sketch-text" style="font-weight: bold; fill: #2b6cb0; text-anchor: middle; font-size: 15px;">Sequential (CPU)</text>
+    
+    <!-- Single Lane road/counter -->
+    <line x1="40" y1="140" x2="270" y2="140" class="lane-border" style="stroke: #2b6cb0; stroke-width: 3;" />
+    
+    <!-- Cashier -->
+    <circle cx="60" cy="130" r="12" fill="#bee3f8" stroke="#2b6cb0" stroke-width="2" />
+    <text x="60" y="158" class="sketch-text" style="text-anchor: middle; font-size: 10px; font-weight: bold;">Cashier</text>
+
+    <!-- Customers waiting in line -->
+    <rect x="110" y="115" width="25" height="25" class="customer-box" />
+    <rect x="150" y="115" width="25" height="25" class="customer-box" />
+    <rect x="190" y="115" width="25" height="25" class="customer-box" />
+    <rect x="230" y="115" width="25" height="25" class="customer-box" />
+    
+    <!-- Flow arrow -->
+    <path d="M 250 100 L 70 100" fill="none" stroke="#2b6cb0" stroke-width="2" marker-end="url(#arrow-blue)" />
+    <defs>
+      <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182ce" />
+      </marker>
+    </defs>
+
+    <text x="155" y="210" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #2c5282;">1 Checkout Counter</text>
+    <text x="155" y="230" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">Customers processed one-by-one.</text>
+  </g>
+
+  <!-- GPU: Parallel Lanes -->
+  <g transform="translate(430, 110)">
+    <rect x="0" y="0" width="310" height="260" class="gpu-lane" />
+    <text x="155" y="30" class="sketch-text" style="font-weight: bold; fill: #22543d; text-anchor: middle; font-size: 15px;">Parallel (GPU)</text>
+    
+    <!-- Lane 1 -->
+    <g transform="translate(0, 50)">
+      <line x1="40" y1="30" x2="270" y2="30" class="lane-border" style="stroke: #38a169; stroke-width: 2;" />
+      <circle cx="60" cy="20" r="8" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5" />
+      <rect x="120" y="10" width="20" height="20" class="customer-box" style="fill: #e6fffa; stroke: #38a169;" />
+    </g>
+
+    <!-- Lane 2 -->
+    <g transform="translate(0, 95)">
+      <line x1="40" y1="30" x2="270" y2="30" class="lane-border" style="stroke: #38a169; stroke-width: 2;" />
+      <circle cx="60" cy="20" r="8" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5" />
+      <rect x="120" y="10" width="20" height="20" class="customer-box" style="fill: #e6fffa; stroke: #38a169;" />
+    </g>
+
+    <!-- Lane 3 -->
+    <g transform="translate(0, 140)">
+      <line x1="40" y1="30" x2="270" y2="30" class="lane-border" style="stroke: #38a169; stroke-width: 2;" />
+      <circle cx="60" cy="20" r="8" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5" />
+      <rect x="120" y="10" width="20" height="20" class="customer-box" style="fill: #e6fffa; stroke: #38a169;" />
+    </g>
+
+    <text x="155" y="210" class="sketch-text" style="text-anchor: middle; font-weight: bold; fill: #22543d;">1,000+ Checkout Counters</text>
+    <text x="155" y="230" class="sketch-text" style="text-anchor: middle; fill: #4a5568;">All customers processed at once.</text>
+  </g>
+</svg>

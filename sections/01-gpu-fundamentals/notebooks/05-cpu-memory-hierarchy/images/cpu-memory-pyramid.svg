@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" height="auto" style="background-color: #faf8f5; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Chalkboard SE', 'Chalkboard', 'Comic Neue', 'Comic Sans MS', sans-serif; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+  <style>
+    .sketch-text { fill: #2d3748; font-size: 13.5px; }
+    .title-text { fill: #1a202c; font-size: 20px; font-weight: bold; }
+    .pyramid-level { stroke: #4a5568; stroke-width: 2.5; stroke-linejoin: round; fill: none; }
+    .speed-arrow { stroke: #dd6b20; stroke-width: 3; stroke-linecap: round; fill: none; }
+  </style>
+
+  <!-- Faint grid background -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0ece4" stroke-width="1" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="12" />
+
+  <!-- Title -->
+  <text x="40" y="45" class="title-text">CPU Memory Hierarchy: The Speed Tradeoff</text>
+  <text x="40" y="70" class="sketch-text" style="font-style: italic; fill: #4a5568;">Why CPUs use small caches to keep the compute core fed without waiting for System RAM.</text>
+
+  <!-- Pyramid -->
+  <g transform="translate(180, 100)">
+    <!-- Registers (Top Level) -->
+    <polygon points="170,0 90,80 250,80" class="pyramid-level" style="fill: #fed7d7;" />
+    <text x="170" y="60" class="sketch-text" style="font-weight: bold; text-anchor: middle; fill: #9b2c2c; font-size: 11px;">Registers (Bytes, &lt;1ns)</text>
+
+    <!-- Cache L1/L2/L3 (Middle Level) -->
+    <polygon points="90,80 250,80 50,200 290,200" class="pyramid-level" style="fill: #feebc8;" />
+    <text x="170" y="130" class="sketch-text" style="font-weight: bold; text-anchor: middle; fill: #c05621; font-size: 12.5px;">Caches L1/L2/L3 (MBs, 1-10ns)</text>
+    <text x="170" y="150" class="sketch-text" style="text-anchor: middle; fill: #7b341e; font-size: 10px;">(Stores active variables close to the Core)</text>
+
+    <!-- System RAM (Base Level) -->
+    <polygon points="50,200 290,200 10,280 330,280" class="pyramid-level" style="fill: #ebf8ff;" />
+    <text x="170" y="240" class="sketch-text" style="font-weight: bold; text-anchor: middle; fill: #2b6cb0; font-size: 13.5px;">System RAM (GBs, ~100ns)</text>
+    <text x="170" y="260" class="sketch-text" style="text-anchor: middle; fill: #2c5282; font-size: 10px;">(Main system memory - DDR4/DDR5)</text>
+  </g>
+
+  <!-- Speed vs Capacity side notes -->
+  <!-- Speed Arrow (pointing up) -->
+  <path d="M 60 380 L 60 120" class="speed-arrow" marker-end="url(#arrow-orange)" />
+  <text x="50" y="250" class="sketch-text" style="font-weight: bold; fill: #dd6b20; font-size: 13px; transform: rotate(-90deg); text-anchor: middle;">SPEED (Faster up)</text>
+
+  <!-- Capacity Arrow (pointing down) -->
+  <path d="M 590 120 L 590 380" class="speed-arrow" stroke="#3182ce" marker-end="url(#arrow-blue)" />
+  <text x="600" y="250" class="sketch-text" style="font-weight: bold; fill: #3182ce; font-size: 13px; transform: rotate(90deg); text-anchor: middle;">CAPACITY (Larger down)</text>
+
+  <defs>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dd6b20" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3182ce" />
+    </marker>
+  </defs>
+</svg>
