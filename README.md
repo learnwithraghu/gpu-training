@@ -5,8 +5,8 @@ This repository is now organized as instructor-first `sections/` content.
 ## Core Structure
 
 - `sections/` - clean teaching guides and notebooks for each section
-- `scripts/` - optional local tooling
-- `site/` - optional static output artifacts
+- `idea.md` - long-form curriculum direction and rationale
+- `ROADMAP.md` - rollout checkpoints for the section-first curriculum
 
 ## Teaching Path
 

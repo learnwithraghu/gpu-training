@@ -17,6 +17,15 @@ Learners can explain CPU vs GPU architecture tradeoffs and choose GPU accelerati
 - Ask learners to predict performance before running code.
 - Tie each concept to practical engineering decisions.
 
+## Notebook Cadence (ultra-short typing)
+
+1. Prompt learners before code
+2. Run one micro code cell (2-6 lines)
+3. Interpret output together
+4. Confirm one takeaway before moving on
+
+Use a coaching tone: "pause and ask", "common mistake", and "debug hint" cues should appear throughout.
+
 ## Notebook
 
 - `notebooks/01-cpu-vs-gpu-intuition-lab.ipynb`

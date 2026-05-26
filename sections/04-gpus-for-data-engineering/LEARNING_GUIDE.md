@@ -17,6 +17,15 @@ Learners can identify ETL bottlenecks and design vectorized GPU-friendly pipelin
 - Treat every stage as measurable (extract, transform, aggregate).
 - Ask learners to justify where GPU helps or does not help.
 
+## Notebook Cadence (ultra-short typing)
+
+1. Stage prompt (extract/transform/aggregate)
+2. Micro code cell (2-6 lines)
+3. Time output readout
+4. Bottleneck checkpoint
+
+Use short loops of measurement and interpretation.
+
 ## Notebook
 
 - `notebooks/01-etl-bottleneck-and-acceleration.ipynb`

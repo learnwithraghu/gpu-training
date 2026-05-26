@@ -17,6 +17,15 @@ Learners can reliably start a Colab GPU runtime, verify hardware, and avoid inva
 - Require learners to run `nvidia-smi` before every lab.
 - Show one failed run scenario (CPU runtime) and compare.
 
+## Notebook Cadence (ultra-short typing)
+
+1. One teaching prompt (markdown)
+2. One micro code cell (2-6 lines)
+3. One expected-output note
+4. One checkpoint question
+
+Keep the pace conversational: pause every 2-3 cells and ask learners what they predict next.
+
 ## Notebook
 
 - `notebooks/01-runtime-verification-and-baseline.ipynb`

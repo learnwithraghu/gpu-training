@@ -17,6 +17,15 @@ Learners can deliver role-specific GPU artifacts with clear metrics and engineer
 - Require a baseline and an improved result.
 - Grade on reproducibility, interpretation, and communication.
 
+## Notebook Cadence (ultra-short typing)
+
+1. Define objective in one line
+2. Micro code cell (2-6 lines)
+3. Record baseline or improvement metric
+4. Reflection checkpoint before next step
+
+Coach for clarity: learners should explain what changed and why it matters.
+
 ## Notebook
 
 - `notebooks/01-capstone-template.ipynb`
