@@ -7,6 +7,8 @@ This repo delivers a complete tutor experience for both live classrooms and solo
 ## Core Structure
 
 - `sections/` — canonical teaching guides (`LEARNING_GUIDE.md`) + runnable Colab notebooks for each of the 8 sections. See `sections/LEARNER_TUTOR_DESIGN.md` for the exact contract that makes the solo experience feel coached and complete.
+- `teaching_style.md` — the repo's teaching voice, including the Karpathy/Matt Pocock-inspired clarity and intuition approach.
+- `AGENTS.md` and `SKILL.md` — platform-neutral AI/agent guidance for improving notebooks and explanations in this repo.
 - `idea.md` — long-form curriculum direction and rationale
 - `ROADMAP.md` — rollout checkpoints (learner experience improvements now happen only in `sections/`)
 
